@@ -12,7 +12,7 @@ from sklearn.linear_model import LinearRegression
 app = Flask(__name__)
 
 # ---------------- Load Data ----------------
-df = pd.read_csv("housing.csv")   # rename if needed
+df = pd.read_csv("Housing.csv")   # rename if needed
 
 X = df.drop(columns=["price"])
 y = df["price"]

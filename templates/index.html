@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { font-family: Arial; background:#f5f5f5; }
+        form { background:#fff; padding:20px; width:400px; margin:auto; }
+        input, select { width:100%; margin:5px 0; padding:8px; }
+        button { width:100%; padding:10px; background:#007bff; color:white; }
+        h2 { text-align:center; }
+    </style>
+</head>
+<body>
+
+<h2>House Price Prediction</h2>
+
+<form method="POST">
+    <input name="area" placeholder="Area (sq.ft)" required>
+    <input name="bedrooms" placeholder="Bedrooms" required>
+    <input name="bathrooms" placeholder="Bathrooms" required>
+    <input name="stories" placeholder="Storeys" required>
+
+    <select name="mainroad">
+        <option value="yes">Main Road: Yes</option>
+        <option value="no">Main Road: No</option>
+    </select>
+
+    <select name="guestroom">
+        <option value="yes">Guest Room: Yes</option>
+        <option value="no">Guest Room: No</option>
+    </select>
+
+    <select name="basement">
+        <option value="yes">Basement: Yes</option>
+        <option value="no">Basement: No</option>
+    </select>
+
+    <select name="hotwaterheating">
+        <option value="yes">Hot Water Heating: Yes</option>
+        <option value="no">Hot Water Heating: No</option>
+    </select>
+
+    <select name="airconditioning">
+        <option value="yes">Air Conditioning: Yes</option>
+        <option value="no">Air Conditioning: No</option>
+    </select>
+
+    <input name="parking" placeholder="Parking spaces" required>
+
+    <select name="prefarea">
+        <option value="yes">Preferred Area: Yes</option>
+        <option value="no">Preferred Area: No</option>
+    </select>
+
+    <select name="furnishingstatus">
+        <option value="furnished">Furnished</option>
+        <option value="semi-furnished">Semi-Furnished</option>
+        <option value="unfurnished">Unfurnished</option>
+    </select>
+
+    <button type="submit">Predict Price</button>
+</form>
+
+{% if prediction %}
+<h2>Predicted Price: {{ prediction }}</h2>
+{% endif %}
+
+</body>
+</html>
